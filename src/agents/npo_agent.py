@@ -3,7 +3,7 @@ from typing import Dict, Any, Optional
 
 from langgraph.graph import StateGraph, START, END
 from langgraph.pregel import Pregel
-
+from IPython.display import Image, display
 from src.config.settings import Settings
 from src.utils.logger import setup_logging
 from src.utils.exceptions import ContentExtractionError, LLMAnalysisError
@@ -45,6 +45,8 @@ class NPOAuditAgent:
         builder.add_edge("stakeholder_perspective_generator", "recommendation_generator")
         builder.add_edge("recommendation_generator", "audit_scorer")
         builder.add_edge("audit_scorer", END)
+        
+        # display(Image(builder.compile().get_graph().draw_mermaid_png()))
         
         return builder.compile()
     

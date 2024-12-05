@@ -15,7 +15,7 @@ In the complex landscape of nonprofit organizations, understanding and optimizin
 
 ## 🏗️ System Architecture
 
-**[Architecture Diagram Placeholder]**
+![Architecture Diagram](image/mermaid_chart.png)
 
 *Diagram Elements:*
 - Content Extraction Node
@@ -107,10 +107,6 @@ The agent includes robust error management:
 - `ContentExtractionError`
 - `LLMAnalysisError`
 - Comprehensive logging
-
-## 🤝 Contributing
-
-Contributions are welcome! Please see `CONTRIBUTING.md` for guidelines.
 
 ## 📄 License
 
