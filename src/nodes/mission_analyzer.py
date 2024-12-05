@@ -46,7 +46,7 @@ def mission_analyzer(state: Dict[str, Any], config: Dict[str, Any]) -> Dict[str,
             HumanMessage(content=f"Analyze the following organizational content:\n{state['raw_content']}")
         ])
         
-        response = llm(mission_prompt.format_messages())
+        response = llm.invoke(mission_prompt.format_messages())
         state['mission_analysis'] = response.content
     except Exception as e:
         logger.error(f"Mission analysis error: {e}")

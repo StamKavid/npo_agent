@@ -50,7 +50,7 @@ def audit_scorer(state: Dict[str, Any], config: Dict[str, Any]) -> Dict[str, Any
             """)
         ])
         
-        response = llm(scoring_prompt.format_messages())
+        response = llm.invoke(scoring_prompt.format_messages())
         
         # More robust parsing of scoring results
         audit_score = {}

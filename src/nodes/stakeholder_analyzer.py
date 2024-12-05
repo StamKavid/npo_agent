@@ -1,7 +1,7 @@
 from typing import Dict, Any
 import logging
 
-from langchain.chat_models import ChatOpenAI
+from langchain_community.chat_models import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
 from langchain.schema import HumanMessage, SystemMessage
 
@@ -47,7 +47,7 @@ def stakeholder_perspective_generator(state: Dict[str, Any], config: Dict[str, A
             HumanMessage(content=f"Analyze stakeholder perspectives for this mission:\n{state['mission_analysis']}")
         ])
         
-        response = llm(perspective_prompt.format_messages())
+        response = llm.invoke(perspective_prompt.format_messages())
         
         # More robust parsing of stakeholder perspectives
         perspectives = {}

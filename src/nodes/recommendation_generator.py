@@ -50,7 +50,7 @@ def recommendation_generator(state: Dict[str, Any], config: Dict[str, Any]) -> D
             """)
         ])
         
-        response = llm(recommendation_prompt.format_messages())
+        response = llm.invoke(recommendation_prompt.format_messages())
         
         # More robust parsing of recommendations
         recommendations = {}
